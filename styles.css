@@ -1,0 +1,122 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+    background: #111;
+}
+
+/* Text Container */
+.text-container {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    max-width: 700px;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Main Heading */
+.heading {
+    font-family: fantasy;
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+/* Subheading */
+.subheading {
+    font-size: 1.8rem;
+}
+
+/* Images Container */
+.images {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual Image */
+.image {
+    position: absolute;
+    width: 18%;
+    height: 20%;
+    border-radius: 15px;
+    opacity: 0.6;
+    transform: scale(1.1);
+    cursor: pointer;
+    pointer-events: all;
+    z-index: 0;
+}
+
+/* Image Hover Effect */
+.image.hovered {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+/* Image Element */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Image Title */
+.image-title {
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    top: 85%;
+    font-family: fantasy;
+    left: 60%;
+    transform: translateX(50%);
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    white-space: nowrap;
+}
+
+/* Subtitle inside Image Title */
+.image-title span {
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    position: relative;
+    top: -38px;
+}
+
+/* Show Title on Hover */
+.image.hovered .image-title {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Reduce Text Container Opacity When Hovering Image */
+.image.hovered~.text-container {
+    opacity: 0.3;
+    z-index: 0;
+}
